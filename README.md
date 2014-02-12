@@ -9,4 +9,4 @@ Open a terminal:
         
 Edit app.js file to your email address.
 
-        $ npm node app.js
+        $ node app.js
