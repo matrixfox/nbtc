@@ -7,7 +7,6 @@ Open a terminal:
         $ cd nbtc
         $ npm install
         
-Edit your app.js file to your email.
+Edit app.js file to your email address.
+
         $ npm node app.js
-        
-        $ npm install
