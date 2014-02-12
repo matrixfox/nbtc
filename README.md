@@ -1,6 +1,9 @@
 nbtc
 ====
 
+She parses the json ticker file from Bitstamp, and stores it in a mongoDB collection, aaannnd emails you if the price rises or lowers.
+
+
 Open a terminal:
 
         ฿ git clone git@github.com:matrixfox/nbtc.git
