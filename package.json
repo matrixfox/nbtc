@@ -1,7 +1,7 @@
 {
   "name": "nbtc",
   "description": "One awesome btc node.js app.",
-  "keywords": ["node.js", "bitcoins", "bitstamp", "ticker"],
+  "keywords": ["node.js", "bitcoins", "bitstamp", "ticker", "email", "alerts"],
   "version": "0.0.1",
   "main": "app.js",
   "repository": {
@@ -15,6 +15,7 @@
   },
   "dependencies" : {
     "nodemailer": "*",
+    "mongodb": "*",
     "mongoose": "*",
     "request": "*"
   }
