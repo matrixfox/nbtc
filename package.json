@@ -1,0 +1,21 @@
+{
+  "name": "nbtc",
+  "description": "One awesome btc node.js app.",
+  "keywords": ["node.js", "bitcoins", "bitstamp", "ticker"],
+  "version": "0.0.1",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/matrixfox/nbtc.git"
+  },
+  "author": "Matrixfox <matrixfox@gmail.com>",
+
+  "engines": {
+    "node": ">= 0.10.21"
+  },
+  "dependencies" : {
+    "nodemailer": "*",
+    "mongoose": "*",
+    "request": "*"
+  }
+}
