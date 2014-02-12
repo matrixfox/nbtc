@@ -10,3 +10,9 @@ Open a terminal:
 Edit app.js file to your email address.
 
         $ node app.js
+
+
+฿ Donations
+===========
+12exE5ZdNMyFN4NVwsuhHuqKdRgb3T2WH5
+
