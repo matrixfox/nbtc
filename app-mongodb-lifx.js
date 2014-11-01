@@ -42,11 +42,11 @@ function nodeify() {
 
 function callback(error, response, body) {
     if (!error && response.statusCode == 200) {
-        var info = JSON.parse(body);
+        var json = JSON.parse(body);
 
 
         // Lower Alarm
-        if (info.last < lowerAlarm && b == true) {
+        if (json.last < lowerAlarm && b == true) {
             // Lifx Bulb *GREEN*
             lx.lightsColour(0x3ebf, 0xffff, 0x8000, 0x0af0, 0x0513);
 
@@ -56,7 +56,7 @@ function callback(error, response, body) {
                 from: "Matrixfox <matrixfox@gmail.com>", // sender address
                 to: "matrixfox@gmail.com", // list of receivers
                 subject: "Bitcoin Alert", // Subject line
-                html: '<p>BUY OUT - Last: <b>' + info.last + " </b>is under your Alarm Price: <b> " + lowerAlarm + '</b></p>' // html body
+                html: '<p>BUY OUT - Last: <b>' + json.last + " </b>is under your Alarm Price: <b> " + lowerAlarm + '</b></p>' // html body
             }
 
 
@@ -73,7 +73,7 @@ function callback(error, response, body) {
 
 
         // Over Alarm
-        if (info.last > overAlarm && s == true) {
+        if (json.last > overAlarm && s == true) {
             // Lifx Bulb *RED*
             lx.lightsColour(0x105, 0xffff, 0x8000, 0x0af0, 0x0513);
 
@@ -83,7 +83,7 @@ function callback(error, response, body) {
                 from: "Matrixfox <matrixfox@gmail.com>", // sender address
                 to: "matrixfox@gmail.com", // list of receivers
                 subject: "Bitcoin Alerts", // Subject line
-                html: '<p>SELL OFF - Last: <b>' + info.last + " </b>is over your Alarm Price: <b> " + overAlarm + '</b></p>' // html body
+                html: '<p>SELL OFF - Last: <b>' + json.last + " </b>is over your Alarm Price: <b> " + overAlarm + '</b></p>' // html body
             }
 
 
