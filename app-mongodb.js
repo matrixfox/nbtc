@@ -1,5 +1,5 @@
 var request = require('request');
-// var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var nodemailer = require("nodemailer");
 
 // create reusable transport method (opens pool of SMTP connections)
@@ -18,23 +18,23 @@ var header = {
     }
 };
 
-// mongoose.connect('mongodb://localhost/bitcoin');
+mongoose.connect('mongodb://localhost/bitcoin');
 
-// // Doctype schema
-// var Schema = mongoose.Schema;
-// var schema = new Schema({
-//     high: String,
-//     last: String,
-//     timestamp: String,
-//     bid: String,
-//     volume: String,
-//     low: String,
-//     ask: String
-// }, { versionKey: false});
-// schema.set('toObject', { getters: true });
+// Doctype schema
+var Schema = mongoose.Schema;
+var schema = new Schema({
+    high: String,
+    last: String,
+    timestamp: String,
+    bid: String,
+    volume: String,
+    low: String,
+    ask: String
+}, { versionKey: false});
+schema.set('toObject', { getters: true });
 
-// // Grabbing the schema and connecting to mongodb database
-// var Bitcoin = mongoose.model('bitstamp', schema);
+// Grabbing the schema and connecting to mongodb database
+var Bitcoin = mongoose.model('bitstamp', schema);
 
 //Set Alerts
 // if price drops lower than =
@@ -61,11 +61,11 @@ function callback(error, response, body) {
 
 
         // dumping json var
-        // var chart = new Bitcoin(info);
-        //     chart.save(function (err) {
-        //       if (err) console.warn(err.message);
-        //       // mongoose.connection.close();
-        //     });
+        var chart = new Bitcoin(info);
+            chart.save(function (err) {
+              if (err) console.warn(err.message);
+              // mongoose.connection.close();
+            });
 
 
         // Lower Alarm
