@@ -1,5 +1,6 @@
 var request = require('request');
 var lifx = require('lifx');
+var config = require('./package.json');
 
 var header = {
     url: 'https://www.bitstamp.net/api/ticker/',
@@ -14,11 +15,11 @@ var lx = lifx.init();
 //Set Alerts
 // if price drops lower than =
 // BUY
-var lowerAlarm = parseFloat('600.99');
+var lowerAlarm = parseFloat(config.buy);
 
 // if price rises higher than =
 // SELL
-var overAlarm = parseFloat('700.99');
+var overAlarm = parseFloat(config.sell);
 
 // SPAM FILTER OUTSIDE OF FUNCTIONS?
 var s = true;

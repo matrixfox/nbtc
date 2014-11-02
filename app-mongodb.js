@@ -1,14 +1,15 @@
 var request = require('request');
 var mongoose = require('mongoose');
 var nodemailer = require("nodemailer");
+var config = require('./package.json');
 
 // create reusable transport method (opens pool of SMTP connections)
 var smtpTransport = nodemailer.createTransport({
     service: "Gmail",
-    auth: {
-        user: "********************",
-        pass: "********************"
-    }
+      auth: {
+          user: config.user,
+          pass: config.passwd
+      }
 });
 
 var header = {
@@ -39,11 +40,11 @@ var Bitcoin = mongoose.model('bitstamp', schema);
 //Set Alerts
 // if price drops lower than =
 // BUY
-var lowerAlarm = parseFloat('600.99');
+var lowerAlarm = parseFloat(config.buy);
 
 // if price rises higher than =
 // SELL
-var overAlarm = parseFloat('700.99');
+var overAlarm = parseFloat(config.sell);
 
 // SPAM FILTER OUTSIDE OF FUNCTIONS?
 var s = true;
@@ -73,8 +74,8 @@ function callback(error, response, body) {
             b = false;
             // setup e-mail data with unicode symbols
             var mailOptions = {
-                from: "Matrixfox <matrixfox@gmail.com>", // sender address
-                to: "matrixfox@gmail.com", // list of receivers
+                from: config.user, // sender address
+                to: config.user, // list of receivers
                 subject: "Bitcoin Alert", // Subject line
                 // text: "BUY " + info.last + " is less than " + lowerAlarm, // plaintext body
                 html: '<p>BUY OUT - Last: <b>' + json.last + " </b>is under your Alarm Price: <b> " + lowerAlarm + '</b></p>' // html body
@@ -98,8 +99,8 @@ function callback(error, response, body) {
             s = false;
             // setup e-mail data with unicode symbols
             var mailOptions = {
-                from: "Matrixfox <matrixfox@gmail.com>", // sender address
-                to: "matrixfox@gmail.com", // list of receivers
+                from: config.user, // sender address
+                to: config.user, // list of receivers
                 subject: "Bitcoin Alerts", // Subject line
                 html: '<p>SELL OFF - Last: <b>' + json.last + " </b>is over your Alarm Price: <b> " + overAlarm + '</b></p>' // html body
             }
