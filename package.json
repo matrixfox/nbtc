@@ -1,8 +1,8 @@
 {
   "name": "nbtc",
-  "description": "One awesome btc node.js app.",
-  "keywords": ["node.js", "bitcoins", "bitstamp", "ticker", "email", "alerts"],
-  "version": "0.0.1",
+  "description": "Not just one awesome node.js app.",
+  "keywords": ["node.js", "mongoDB", "mongoose", "request", "websocket", "bitcoins", "blockchain", "bitstamp", "ticker", "email", "alerts", "lifx"],
+  "version": "0.0.2",
   "main": "app.js",
   "repository": {
     "type": "git",
@@ -11,12 +11,18 @@
   "author": "Matrixfox <matrixfox@gmail.com>",
 
   "engines": {
-    "node": ">= 0.10.21"
+    "node": ">= 0.10.32"
   },
   "dependencies" : {
+    "request": "*",
     "nodemailer": "*",
     "mongodb": "*",
     "mongoose": "*",
-    "request": "*"
-  }
+    "websocket": "*",
+    "lifx": "*"
+  },
+  "user" : "gmail.user@gmail.com",
+  "passwd" : "userpass",
+  "buy": "600.99",
+  "sell": "700.99"
 }
