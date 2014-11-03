@@ -1,13 +1,13 @@
 nbtc
 ====
 
-She parses the json ticker from Bitstamp, and stores it in a mongoDB collection aaannnd, sends alarming emails.
+She parses the json ticker from Bitstamp, and stores it in a mongoDB collection aaannnd, sends alarming emails. Some extra nodejs apps were included. I was inspired by a YouTube video that had a Lifx Wi-Fi bulb. It was a python websocket script flashing to Blockchain.info transactions.
 
 Getting Started
 ===
 
 <b>Note:</b> This repository requires the following npm packages,<br>
-request, nodemailer, mongodb, mongoose and lifx.
+request, nodemailer, mongodb, mongoose, websocket and lifx.
 
 1: Open a terminal. (control + command + t)
 

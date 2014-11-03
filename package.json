@@ -1,7 +1,7 @@
 {
   "name": "nbtc",
   "description": "Not just one awesome node.js app.",
-  "keywords": ["node.js", "mongoDB", "mongoose", "request", "bitcoins", "blockchain", "bitstamp", "ticker", "email", "alerts", "lifx"],
+  "keywords": ["node.js", "mongoDB", "mongoose", "request", "websocket", "bitcoins", "blockchain", "bitstamp", "ticker", "email", "alerts", "lifx"],
   "version": "0.0.2",
   "main": "app.js",
   "repository": {
@@ -15,6 +15,7 @@
   },
   "dependencies" : {
     "request": "*",
+    "websocket": "*",
     "nodemailer": "*",
     "mongodb": "*",
     "mongoose": "*",
